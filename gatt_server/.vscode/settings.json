@@ -1,0 +1,38 @@
+{
+  "C_Cpp.intelliSenseEngine": "Tag Parser",
+  "idf.adapterTargetName": "esp32",
+  "idf.customExtraPaths": "/Users/jordan/.espressif/tools/xtensa-esp-elf-gdb/11.2_20220823/xtensa-esp-elf-gdb/bin:/Users/jordan/.espressif/tools/riscv32-esp-elf-gdb/11.2_20220823/riscv32-esp-elf-gdb/bin:/Users/jordan/.espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin:/Users/jordan/.espressif/tools/xtensa-esp32s2-elf/esp-2022r1-11.2.0/xtensa-esp32s2-elf/bin:/Users/jordan/.espressif/tools/xtensa-esp32s3-elf/esp-2022r1-11.2.0/xtensa-esp32s3-elf/bin:/Users/jordan/.espressif/tools/riscv32-esp-elf/esp-2022r1-11.2.0/riscv32-esp-elf/bin:/Users/jordan/.espressif/tools/esp32ulp-elf/2.35_20220830/esp32ulp-elf/bin:/Users/jordan/.espressif/tools/openocd-esp32/v0.11.0-esp32-20221026/openocd-esp32/bin:/Users/jordan/.espressif/tools/ninja/1.10.2:/Users/jordan/.espressif/tools/esp-rom-elfs/20220823",
+  "idf.customExtraVars": {
+    "OPENOCD_SCRIPTS": "/Users/jordan/.espressif/tools/openocd-esp32/v0.11.0-esp32-20221026/openocd-esp32/share/openocd/scripts",
+    "ESP_ROM_ELF_DIR": "/Users/jordan/.espressif/tools/esp-rom-elfs/20220823/"
+  },
+  "idf.espIdfPath": "/Users/jordan/esp/esp-idf",
+  "idf.openOcdConfigs": ["board/esp32-wrover-kit-3.3v.cfg"],
+  "idf.flashType": "UART",
+  "idf.port": "/dev/cu.usbserial-0147B21C",
+  "idf.monitorBaudRate": "115200",
+  "idf.pythonBinPath": "/Users/jordan/.espressif/python_env/idf5.0_py3.11_env/bin/python",
+  "idf.toolsPath": "/Users/jordan/.espressif",
+  "files.associations": {
+    "inttypes.h": "c",
+    "esp_gatts_api.h": "c",
+    "string.h": "c",
+    "stdbool.h": "c",
+    "functional": "c",
+    "array": "c",
+    "string": "c",
+    "string_view": "c",
+    "common.h": "c",
+    "rlp.h": "c",
+    "utils.h": "c",
+    "constants.h": "c",
+    "stdio.h": "c",
+    "aes.h": "c",
+    "esp_bt_main.h": "c",
+    "esp_gap_ble_api.h": "c",
+    "esp_gatt_common_api.h": "c",
+    "sha256.h": "c",
+    "task.h": "c",
+    "random": "c"
+  }
+}
