@@ -27,11 +27,10 @@
 #define GATTS_TAG "GATTS_DEMO"
 
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
-#define MAX(a, b) ((a) > (b) ? (a) : (b))
-
-
-const uint8_t NODE_FLOW_ADDRESS[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01};
+#define MAX(a, b) ((a) > (b) ? (a) : (b)) 
 
 typedef uint8_t address[8];
+
+static address NODE_FLOW_ADDRESS = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01};
 
 #endif // COMMON_H

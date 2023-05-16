@@ -1,4 +1,2 @@
-set(COMPONENT_SRCS "./source")
-set(COMPONENT_ADD_INCLUDEDIRS "./include")
-
-register_component()
+idf_component_register(SRC_DIRS "source"
+                    INCLUDE_DIRS "include")

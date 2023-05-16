@@ -14,6 +14,7 @@
 ****************************************************************************/
 
 #include "common.h"
+#include "encode.h"
 
 ///Declare the static function
 static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param);
@@ -665,6 +666,24 @@ void app_main(void)
     if (local_mtu_ret){
         ESP_LOGE(GATTS_TAG, "set local  MTU failed, error code = %x", local_mtu_ret);
     }
+
+    // Parameters
+    address userAddress = {0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF};
+    uint8_t refBlockId[32] = {0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF, 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF,0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF, 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF};
+
+
+    // Compute the tx payload
+    uint8_t *buffer = malloc(3072);
+    int buffer_len = encode_tx_payload(buffer, 3072, userAddress, 123U, refBlockId);
+    buffer = realloc(buffer, buffer_len);
+    char* str = malloc(buffer_len*2 + 1);
+
+    for(int i = 0; i < buffer_len; i++) {
+        sprintf(str + i*2, "%02x", buffer[i]);
+    }
+    str[buffer_len*2] = 0;
+
+    ESP_LOGI(GATTS_TAG, "TX Payload: %s", str);
 
     return;
 }
