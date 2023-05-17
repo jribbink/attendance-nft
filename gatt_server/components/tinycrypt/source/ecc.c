@@ -53,12 +53,15 @@
  */
 
 #include <tinycrypt/ecc.h>
-#include <tinycrypt/ecc_platform_specific.h>
 #include <string.h>
+#include "esp_random.h"
 
-/* IMPORTANT: Make sure a cryptographically-secure PRNG is set and the platform
- * has access to enough entropy in order to feed the PRNG regularly. */
-static uECC_RNG_Function g_rng_function = 0;
+int default_CSPRNG(uint8_t *dest, unsigned int size) {
+  esp_fill_random(dest, (size_t)size);
+	return 1;
+}
+
+static uECC_RNG_Function g_rng_function = &default_CSPRNG;
 
 void uECC_set_rng(uECC_RNG_Function rng_function)
 {

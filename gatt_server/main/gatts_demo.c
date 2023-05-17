@@ -304,7 +304,7 @@ static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
                 ESP_GATT_WRONG_STATE, &rsp);
         } else {
             // Sign the transaction
-            uint8_t* signature = malloc(64);
+            uint8_t signature[64];
             int8_t ret = sign_client_tx(client, signature);
             if(ret != 0) {
                 ESP_LOGE(GATTS_TAG, "Error signing transaction\n");
@@ -313,8 +313,6 @@ static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
 
             rsp.attr_value.len = 64;
             memcpy(rsp.attr_value.value, signature, 64);
-
-            free(signature);
 
             esp_ble_gatts_send_response(gatts_if, param->read.conn_id, param->read.trans_id,
                                         ESP_GATT_OK, &rsp);

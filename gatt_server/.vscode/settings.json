@@ -42,6 +42,10 @@
     "bitset": "c",
     "vector": "c",
     "memory": "c",
-    "*.inc": "cpp"
+    "*.inc": "cpp",
+    "*.tcc": "c",
+    "esp_random.h": "c",
+    "initializer_list": "c",
+    "regex": "c"
   }
 }
