@@ -33,6 +33,15 @@
     "esp_gatt_common_api.h": "c",
     "sha256.h": "c",
     "task.h": "c",
-    "random": "c"
+    "random": "c",
+    "ratio": "c",
+    "system_error": "c",
+    "tuple": "c",
+    "type_traits": "c",
+    "utility": "c",
+    "bitset": "c",
+    "vector": "c",
+    "memory": "c",
+    "*.inc": "cpp"
   }
 }

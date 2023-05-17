@@ -58,11 +58,7 @@
 
 /* IMPORTANT: Make sure a cryptographically-secure PRNG is set and the platform
  * has access to enough entropy in order to feed the PRNG regularly. */
-#if default_RNG_defined
-static uECC_RNG_Function g_rng_function = &default_CSPRNG;
-#else
 static uECC_RNG_Function g_rng_function = 0;
-#endif
 
 void uECC_set_rng(uECC_RNG_Function rng_function)
 {
