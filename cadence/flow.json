@@ -1,0 +1,62 @@
+{
+	"contracts": {
+		"AttendanceNFT": "contracts/AttendanceNFT.cdc",
+		"FungibleToken": "contracts/utility/FungibleToken.cdc",
+		"MetadataViews": "contracts/MetadataViews.cdc",
+		"NFTForwarding": "contracts/utility/NFTForwarding.cdc",
+		"NonFungibleToken": {
+			"source": "contracts/NonFungibleToken.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"mainnet": "1d7e57aa55817448",
+				"testnet": "631e88ae7f1d7c20"
+			}
+		},
+		"ViewResolver": "contracts/ViewResolver.cdc"
+	},
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
+	},
+	"accounts": {
+		"Foobar": {
+			"address": "045a1763c93006ca",
+			"key": "4125fe5d08769e752d522311274302304f6f1894831671a083ca47de97e8a4f6"
+		},
+		"LocationAcct": {
+			"address": "f669cb8d41ce0c74",
+			"key": "eb69c6436febc5b2aad41b81589f990a17c63a0760765efb815397a06d0ee504"
+		},
+		"Test1": {
+			"address": "e03daebed8ca0615",
+			"key": "f8685be8360485cffeb33c324b3f756eb572daa15ab8f5b49cbf382189a80070"
+		},
+		"UserAcct": {
+			"address": "192440c99cb17282",
+			"key": "4fc2540e1a30aefc334ad4e62796baadc8c5ba6fee9316ba95a45468c1e6a6a3"
+		},
+		"default": {
+			"address": "e03daebed8ca0615",
+			"key": "1a05ba433be5af2988e814d1e4fa08f1574140e6cb5649a861cc6377718c51be"
+		},
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"key": "1a05ba433be5af2988e814d1e4fa08f1574140e6cb5649a861cc6377718c51be"
+		}
+	},
+	"deployments": {
+		"emulator": {
+			"LocationAcct": [],
+			"UserAcct": [],
+			"emulator-account": [
+				"NonFungibleToken",
+				"ViewResolver",
+				"AttendanceNFT",
+				"MetadataViews",
+				"FungibleToken",
+				"NFTForwarding"
+			]
+		}
+	}
+}
