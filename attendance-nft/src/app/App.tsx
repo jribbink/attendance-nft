@@ -30,10 +30,10 @@ export default function App() {
     function listener(location: Location) {
       setModalLocation(location);
     }
-    const subscription = ble?.addListener("locationFound", listener);
+    ble?.addListener("locationFound", listener);
 
     return () => {
-      subscription?.remove();
+      ble?.removeListener("locationFound", listener);
     };
   }, []);
 

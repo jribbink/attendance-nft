@@ -2,7 +2,8 @@ const SECONDS_TO_SCAN_FOR = 7;
 const SERVICE_UUIDS: string[] = [];
 const ALLOW_DUPLICATES = true;
 
-import { EventEmitter, NativeEventEmitter, NativeModules } from "react-native";
+import TypedEmitter from "typed-emitter";
+import { NativeEventEmitter, NativeModules } from "react-native";
 import BleManager, {
   BleDisconnectPeripheralEvent,
   BleManagerDidUpdateValueForCharacteristicEvent,
@@ -15,6 +16,8 @@ import { Location } from "../models/Location";
 import { createContext, useRef } from "react";
 import * as fcl from "@onflow/fcl";
 import { Event } from "@onflow/typedefs";
+import { EventEmitter } from "events";
+
 const BleManagerModule = NativeModules.BleManager;
 const bleManagerEmitter = new NativeEventEmitter(BleManagerModule);
 
@@ -41,7 +44,11 @@ export default function BleContextProvider({
   return <BleContext.Provider value={manager}>{children}</BleContext.Provider>;
 }
 
-export class BadgeBleManager extends EventEmitter {
+type BadgeBleManagerEvents = {
+  locationFound: (location: Location) => void;
+};
+
+export class BadgeBleManager extends (EventEmitter as unknown as new () => TypedEmitter<BadgeBleManagerEvents>) {
   constructor() {
     super();
   }
